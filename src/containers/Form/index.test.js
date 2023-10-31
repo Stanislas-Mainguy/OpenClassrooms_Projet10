@@ -8,6 +8,8 @@ describe("When Events is created", () => {
     await screen.findByText("Nom");
     await screen.findByText("Prénom");
     await screen.findByText("Personel / Entreprise");
+    await screen.findByText("Envoyer");
+    await screen.findByText("Message");
   });
 
   describe("and a click is triggered on the submit button", () => {
@@ -22,7 +24,6 @@ describe("When Events is created", () => {
         })
       );
       await screen.findByText("En cours");
-      await screen.findByText("Envoyer");
       expect(onSuccess).toHaveBeenCalled();
     });
   });
