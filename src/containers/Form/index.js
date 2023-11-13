@@ -8,6 +8,7 @@ const mockContactApi = () => new Promise((resolve) => { setTimeout(resolve, 1000
 
 const Form = ({ onSuccess, onError }) => {
   const [sending, setSending] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
   const sendContact = useCallback(
     async (evt) => {
       evt.preventDefault();
@@ -16,6 +17,8 @@ const Form = ({ onSuccess, onError }) => {
       try {
         await mockContactApi();
         setSending(false);
+        setIsSubmitted(true);
+        onSuccess();
       } catch (err) {
         setSending(false);
         onError(err);
@@ -24,32 +27,38 @@ const Form = ({ onSuccess, onError }) => {
     [onSuccess, onError]
   );
   return (
-    <form onSubmit={sendContact}>
-      <div className="row">
-        <div className="col">
-          <Field placeholder="" label="Nom" />
-          <Field placeholder="" label="Prénom" />
-          <Select
-            selection={["Personel", "Entreprise"]}
-            onChange={() => null}
-            label="Personel / Entreprise"
-            type="large"
-            titleEmpty
-          />
-          <Field placeholder="" label="Email" />
-          <Button type={BUTTON_TYPES.SUBMIT} data-testid="button-test-id" disabled={sending}>
-            {sending ? "En cours" : "Envoyer"}
-          </Button>
-        </div>
-        <div className="col">
-          <Field
-            placeholder="message"
-            label="Message"
-            type={FIELD_TYPES.TEXTAREA}
-          />
-        </div>
-      </div>
-    </form>
+    <div>
+      {isSubmitted ? (
+        <p>Message envoyé !</p>
+      ) : (
+        <form onSubmit={sendContact}>
+          <div className="row">
+            <div className="col">
+              <Field placeholder="" label="Nom" />
+              <Field placeholder="" label="Prénom" />
+              <Select
+                selection={["Personnel", "Entreprise"]}
+                onChange={() => null}
+                label="Personnel / Entreprise"
+                type="large"
+                titleEmpty
+              />
+              <Field placeholder="" label="Email" />
+              <Button type={BUTTON_TYPES.SUBMIT} data-testid="button-test-id" disabled={sending}>
+                {sending ? "En cours" : "Envoyer"}
+              </Button>
+            </div>
+            <div className="col">
+              <Field
+                placeholder="message"
+                label="Message"
+                type={FIELD_TYPES.TEXTAREA}
+              />
+            </div>
+          </div>
+        </form>
+      )}
+    </div>
   );
 };
 
