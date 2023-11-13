@@ -5,7 +5,7 @@ import { useData } from "../../contexts/DataContext";
 import Modal from "../Modal";
 import ModalEvent from "../ModalEvent";
 
-import "./style.css";
+import "./style.scss";
 
 const PER_PAGE = 9;
 
@@ -15,7 +15,7 @@ const EventList = () => {
   const [currentPage, setCurrentPage] = useState(1);
   
   const filteredEvents = data?.events.filter((event) => !type || event.type === type)
-    .filter((event, index) => (currentPage - 1) * PER_PAGE <= index && index < currentPage * PER_PAGE) || [];
+    .filter((_, index) => (currentPage - 1) * PER_PAGE <= index && index < currentPage * PER_PAGE) || [];
 
   const changeType = (evtType) => {
     setCurrentPage(1);
