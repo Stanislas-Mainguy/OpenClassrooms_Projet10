@@ -7,7 +7,7 @@ describe("When Form is created", () => {
     await screen.findByText("Email");
     await screen.findByText("Nom");
     await screen.findByText("Prénom");
-    await screen.findByText("Personel / Entreprise");
+    await screen.findByText("Personnel / Entreprise");
   });
 
   describe("and a click is triggered on the submit button", () => {
@@ -31,22 +31,22 @@ describe("When Form is created", () => {
 describe("When a page is created", () => {
   it("a list of events is displayed", async () => {
     render(<Home />);
-    const eventList = screen.getByTestId("list-of-events");
+    const eventList = await screen.findByTestId("list-of-events");
     expect(eventList).toBeInTheDocument();
   })
   it("a list a people is displayed", async () => {
     render(<Home />);
-    const listOfPeople = screen.getByTestId("people-card-test");
+    const listOfPeople = await screen.findByTestId("people-card-test");
     expect(listOfPeople).toBeInTheDocument();
   })
   it("a footer is displayed", async () => {
     render(<Home />);
-    const footer = screen.getByTestId("footer");
+    const footer = await screen.findByTestId("footer");
     expect(footer).toBeInTheDocument();
   })
   it("an event card, with the last event, is displayed", async () => {
     render(<Home />);
-    const lastEventCard = screen.getByTestId("last-event-card");
+    const lastEventCard = await screen.findByTestId("last-event-card");
     expect(lastEventCard).toBeInTheDocument();
   })
 });
