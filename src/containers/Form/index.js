@@ -26,32 +26,32 @@ const Form = ({ onSuccess, onError }) => {
   );
   return (
     <div>
-        <form onSubmit={sendContact}>
-          <div className="row">
-            <div className="col">
-              <Field placeholder="" label="Nom" />
-              <Field placeholder="" label="Prénom" />
-              <Select
-                selection={["Personnel", "Entreprise"]}
-                onChange={() => null}
-                label="Personnel / Entreprise"
-                type="large"
-                titleEmpty
-              />
-              <Field placeholder="" label="Email" />
-              <Button type={BUTTON_TYPES.SUBMIT} data-testid="button-test-id" disabled={sending}>
-                {sending ? "En cours" : "Envoyer"}
-              </Button>
-            </div>
-            <div className="col">
-              <Field
-                placeholder="message"
-                label="Message"
-                type={FIELD_TYPES.TEXTAREA}
-              />
-            </div>
+      <form onSubmit={sendContact}>
+        <div className="row">
+          <div className="col">
+            <Field placeholder="" label="Nom" />
+            <Field placeholder="" label="Prénom" />
+            <Select
+              selection={["Personnel", "Entreprise"]}
+              onChange={() => null}
+              label="Personnel / Entreprise"
+              type="large"
+              titleEmpty
+            />
+            <Field placeholder="" label="Email" />
+            <Button type={BUTTON_TYPES.SUBMIT} data-testid="button-test-id" disabled={sending}>
+              {sending ? "En cours" : "Envoyer"}
+            </Button>
           </div>
-        </form>
+          <div className="col">
+            <Field
+              placeholder="message"
+              label="Message"
+              type={FIELD_TYPES.TEXTAREA}
+            />
+          </div>
+        </div>
+      </form>
     </div>
   );
 };
