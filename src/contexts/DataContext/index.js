@@ -31,13 +31,11 @@ export const DataProvider = ({ children }) => {
     getData();
   }, [data, getData]);
 
-  const lastEvent = data?.events?.length > 0 ? data.events[0] : null;
-
   const contextValue = useMemo(() => ({
     data,
     error,
-    last: lastEvent,
-  }), [data, error, lastEvent]);
+    lastEvent: data?.events?.[0]
+  }), [data, error]);
 
   return (
     <DataContext.Provider value={contextValue}>
