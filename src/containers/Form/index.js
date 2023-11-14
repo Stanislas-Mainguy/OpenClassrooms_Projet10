@@ -8,16 +8,14 @@ const mockContactApi = () => new Promise((resolve) => { setTimeout(resolve, 1000
 
 const Form = ({ onSuccess, onError }) => {
   const [sending, setSending] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
   const sendContact = useCallback(
     async (evt) => {
       evt.preventDefault();
       setSending(true);
-      // We try to call mockContactApi
+      
       try {
         await mockContactApi();
         setSending(false);
-        setIsSubmitted(true);
         onSuccess();
       } catch (err) {
         setSending(false);
@@ -28,9 +26,6 @@ const Form = ({ onSuccess, onError }) => {
   );
   return (
     <div>
-      {isSubmitted ? (
-        <p>Message envoyé !</p>
-      ) : (
         <form onSubmit={sendContact}>
           <div className="row">
             <div className="col">
@@ -57,7 +52,6 @@ const Form = ({ onSuccess, onError }) => {
             </div>
           </div>
         </form>
-      )}
     </div>
   );
 };
