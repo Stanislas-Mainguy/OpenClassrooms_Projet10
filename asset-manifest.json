@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/OpenClassrooms_Projet10/static/css/main.a5b1282c.css",
+    "main.js": "/OpenClassrooms_Projet10/static/js/main.2a415e1c.js",
+    "static/js/787.f632ec5a.chunk.js": "/OpenClassrooms_Projet10/static/js/787.f632ec5a.chunk.js",
+    "index.html": "/OpenClassrooms_Projet10/index.html",
+    "main.a5b1282c.css.map": "/OpenClassrooms_Projet10/static/css/main.a5b1282c.css.map",
+    "main.2a415e1c.js.map": "/OpenClassrooms_Projet10/static/js/main.2a415e1c.js.map",
+    "787.f632ec5a.chunk.js.map": "/OpenClassrooms_Projet10/static/js/787.f632ec5a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a5b1282c.css",
+    "static/js/main.2a415e1c.js"
+  ]
+}
