@@ -1,15 +1,18 @@
 {
   "files": {
     "main.css": "/OpenClassrooms_Projet10/static/css/main.a5b1282c.css",
-    "main.js": "/OpenClassrooms_Projet10/static/js/main.fefa6308.js",
+    "main.js": "/OpenClassrooms_Projet10/static/js/main.d4b91a41.js",
     "static/js/787.f632ec5a.chunk.js": "/OpenClassrooms_Projet10/static/js/787.f632ec5a.chunk.js",
+    "static/media/priscilla-du-preez-Q7wGvnbuwj0-unsplash1.png": "/OpenClassrooms_Projet10/static/media/priscilla-du-preez-Q7wGvnbuwj0-unsplash1.7802bca1a6eb70e1d65c.png",
+    "static/media/hall-expo.png": "/OpenClassrooms_Projet10/static/media/hall-expo.5e284f1ddca9e7a740a6.png",
+    "static/media/sophia-sideri-LFXMtUuAKK8-unsplash1.png": "/OpenClassrooms_Projet10/static/media/sophia-sideri-LFXMtUuAKK8-unsplash1.f28587c829e5a505d7a3.png",
     "index.html": "/OpenClassrooms_Projet10/index.html",
     "main.a5b1282c.css.map": "/OpenClassrooms_Projet10/static/css/main.a5b1282c.css.map",
-    "main.fefa6308.js.map": "/OpenClassrooms_Projet10/static/js/main.fefa6308.js.map",
+    "main.d4b91a41.js.map": "/OpenClassrooms_Projet10/static/js/main.d4b91a41.js.map",
     "787.f632ec5a.chunk.js.map": "/OpenClassrooms_Projet10/static/js/787.f632ec5a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a5b1282c.css",
-    "static/js/main.fefa6308.js"
+    "static/js/main.d4b91a41.js"
   ]
 }
